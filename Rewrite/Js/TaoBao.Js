@@ -1,3 +1,10 @@
+// 2024-10-15 10:05
+
+const url = $request.url;
+const isResp = typeof $response !== "undefined";
+let body = $response.body;
+
+switch (isResp) {
   // 淘宝-开屏视频广告
   case /^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.cloudvideo\.video\.query/.test(url):
     try {
@@ -82,3 +89,8 @@
       console.log(`淘宝-开屏活动, 出现异常: ` + err);
     }
     break;
+  default:
+    $done({});
+}
+
+$done({ body });
