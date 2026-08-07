@@ -14,8 +14,8 @@ TG_NOTIFY_ONLY_FAIL = switch, false, tag=仅失败时通知, desc=开启后仅�
 RANDOM_REWARD = switch, false, tag=随机奖励模式, desc=开启后进行随机抽奖
 
 [Script]
-http-request ^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\/\d+\?readme=1$ script-path=https://raw.githubusercontent.com/Ezrea7/QuantumultX/refs/heads/main/Script/Js/NodeSeek.Js, requires-body=false, tag=NS签到获取Cookie, argument=[{ENABLE_CAPTURE}]
-cron {CRON_TIME} script-path=https://raw.githubusercontent.com/Ezrea7/QuantumultX/refs/heads/main/Script/Js/NodeSeek.Js, tag=NS签到定时执行, argument=[{NS_COOKIE},{TG_BOT_TOKEN},{TG_USER_ID},{TG_NOTIFY_ONLY_FAIL},{RANDOM_REWARD}]
+http-request ^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\/\d+\?readme=1$ script-path=https://raw.githubusercontent.com/Ezrea7/QuantumultX/refs/heads/GitHub/Script/Js/NodeSeek.Js, requires-body=false, tag=NS签到获取Cookie, argument=[{ENABLE_CAPTURE}]
+cron {CRON_TIME} script-path=https://raw.githubusercontent.com/Ezrea7/QuantumultX/refs/heads/GitHub/Script/Js/NodeSeek.Js, tag=NS签到定时执行, argument=[{NS_COOKIE},{TG_BOT_TOKEN},{TG_USER_ID},{TG_NOTIFY_ONLY_FAIL},{RANDOM_REWARD}]
 
 [MITM]
 hostname = www.nodeseek.com
