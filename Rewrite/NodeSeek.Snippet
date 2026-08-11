@@ -8,7 +8,7 @@
 ^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\/\d+\?readme=1$ url script-request-header https://raw.githubusercontent.com/Ezrea7/QuantumultX/refs/heads/GitHub/Rewrite/NodeSeek.Snippet
 
 [task_local]
-8 0 * * * https://raw.githubusercontent.com/Ezrea7/QuantumultX/refs/heads/GitHub/Rewrite/NodeSeek.Snippet, tag=NS🍗签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/ZenMoFeiShi.png, enabled=true
+1 0 * * * https://raw.githubusercontent.com/Ezrea7/QuantumultX/refs/heads/GitHub/Rewrite/NodeSeek.Snippet, tag=NS🍗签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/ZenMoFeiShi.png, enabled=true
 [MITM]
 hostname = www.nodeseek.com
 
@@ -66,7 +66,7 @@ if (isGetHeader) {
     $done({});
   }
 } else {
-  // 🔹 读取已保存指定 headers，重放签到请求：https://www.nodeseek.com/api/attendance?random=false
+  // 🔹 读取已保存指定 headers，重放签到请求：https://www.nodeseek.com/api/attendance?random=true
   const raw = $prefs.valueForKey(NS_HEADER_KEY);
   if (!raw) {
     $notify("NS签到结果", "无法签到", "本地没有已保存的请求头，请先抓包访问一次 个人页面。");
